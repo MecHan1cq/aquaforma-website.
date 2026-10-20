@@ -1,0 +1,1 @@
+Images in the prototype are illustrative external Unsplash URLs, not verified client work. Confirm licenses and replace with real project photos before production.

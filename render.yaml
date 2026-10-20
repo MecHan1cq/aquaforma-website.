@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: aquaforma-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: aquaforma-db
+          property: connectionString
+      - key: ALLOWED_ORIGINS
+        value: "*"
+  - type: web
+    name: aquaforma-site
+    runtime: static
+    buildCommand: python scripts/build_static.py
+    staticPublishPath: frontend/dist
+    envVars:
+      - key: API_BASE_URL
+        value: https://aquaforma-api.onrender.com
+databases:
+  - name: aquaforma-db
+    databaseName: aquaforma
+    user: aquaforma_user
