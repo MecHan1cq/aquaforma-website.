@@ -2,16 +2,20 @@ services:
   - type: web
     name: aquaforma-api
     runtime: python
+    plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /health
     envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
       - key: DATABASE_URL
         fromDatabase:
           name: aquaforma-db
           property: connectionString
       - key: ALLOWED_ORIGINS
-        value: "*"
+        value: https://aquaforma-site.onrender.com
+
   - type: web
     name: aquaforma-site
     runtime: static
@@ -20,7 +24,9 @@ services:
     envVars:
       - key: API_BASE_URL
         value: https://aquaforma-api.onrender.com
+
 databases:
   - name: aquaforma-db
     databaseName: aquaforma
     user: aquaforma_user
+    plan: free

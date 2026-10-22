@@ -12,8 +12,12 @@ from sqlalchemy import create_engine, String, Text, Integer, DateTime
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, sessionmaker
 
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./aquaforma.db")
+# Render commonly provides postgres:// or postgresql:// URLs. Use psycopg 3,
+# which is installed by requirements.txt, instead of SQLAlchemy's psycopg2 default.
 if DATABASE_URL.startswith("postgres://"):
-    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql+psycopg://", 1)
+elif DATABASE_URL.startswith("postgresql://"):
+    DATABASE_URL = DATABASE_URL.replace("postgresql://", "postgresql+psycopg://", 1)
 engine = create_engine(DATABASE_URL, pool_pre_ping=True, connect_args={"check_same_thread": False} if DATABASE_URL.startswith("sqlite") else {})
 Session = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 app = FastAPI(title="AquaForma API", version="1.1.0")
@@ -44,7 +48,7 @@ class Contact(BaseModel):
     message: str = Field(min_length=10, max_length=5000)
     language: str = Field(default="en", pattern="^(ru|pl|en|de|lt)$")
 
-    @field_validator("name", "country", "project_type", "message")
+    @field_validator("name", "country", "project_type", "message", mode="before")
     @classmethod
     def strip_text(cls, value: str) -> str:
         return value.strip()
