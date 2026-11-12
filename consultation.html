@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#102c36">
+<title>AquaForma consultation | AquaForma</title>
+<meta name="description" content="Ask the AquaForma team a question and attach a supporting file.">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body class="subpage">
+<div class="topline"><span>AQUAFORMA · WATER ARCHITECTURE</span><span>Projects and learning across Europe</span></div>
+<header class="nav sub-nav">
+  <a class="logo" href="/">AQUAFORMA<small>WATER ARCHITECTURE</small></a>
+  <nav class="navlinks">
+    <a href="/">Home</a><a href="/portfolio.html">Portfolio</a><a href="/application.html">Waterfall project</a>
+    <a href="/courses.html">Courses</a><a href="/products.html">Products</a><a href="/consultation.html">Consultation</a>
+  </nav>
+  <div class="rightnav"><a class="cta" href="/application.html">Start a project ↗</a><button class="mobile-menu" aria-label="Menu" aria-expanded="false">☰</button></div>
+</header>
+<main class="page-main">
+
+<section class="page-hero">
+  <div class="kicker">PERSONAL CONSULTATION</div>
+  <h1>LET’S DISCUSS YOUR IDEA</h1>
+  <p>Have a question about a waterfall, garden, product or course? Send us a message and attach a photo, video or document if it helps explain your request.</p>
+</section>
+<section class="page-content two-col">
+  <div class="side-copy">
+    <div class="kicker">DIRECT CONTACT</div><h2>One place for your questions</h2>
+    <p>Your message and attachment are saved in the AquaForma database and appear in the administrator dashboard. The team can review your question and follow up using the contact details you provide.</p>
+    <div class="info-panel"><strong>Accepted attachments</strong><ul><li>Images: JPG, PNG, WEBP, GIF</li><li>Videos: MP4, MOV, WEBM</li><li>Documents: PDF</li></ul><p>Maximum file size: 25 MB.</p></div>
+    <p class="small-note">Please do not upload payment card details, passwords or unrelated sensitive documents.</p>
+  </div>
+  <form class="portal-form" id="consultationForm">
+    <h2>Send a question</h2>
+    <label>Your name<input name="name" required maxlength="160" autocomplete="name"></label>
+    <label>Email<input type="email" name="email" required maxlength="254" autocomplete="email"></label>
+    <label>Phone / WhatsApp<input name="phone" maxlength="60" autocomplete="tel"></label>
+    <label>Your question<textarea name="question" required rows="7" maxlength="10000" placeholder="Describe what you would like to know…"></textarea></label>
+    <label>Attach a file (optional)<input type="file" name="file" id="consultationFile" accept="image/jpeg,image/png,image/webp,image/gif,image/heic,image/heif,video/mp4,video/quicktime,video/webm,application/pdf"><small>One image, video or PDF file up to 25 MB.</small></label>
+    <label class="consent-row"><input type="checkbox" name="consent" required><span>I agree that AquaForma may store this message and attachment to respond to my request.</span></label>
+    <button class="cta" type="submit">Send consultation request ↗</button>
+    <p class="form-status" id="consultationStatus" role="status"></p>
+  </form>
+</section>
+
+</main>
+<footer>
+  <div class="foot">
+    <div><a class="logo" href="/">AQUAFORMA<small>WATER ARCHITECTURE</small></a><p>Bespoke water features, garden design and learning experiences.</p></div>
+    <div class="footlinks"><a href="/">Home</a><a href="/portfolio.html">Portfolio</a><a href="/application.html">Project application</a><a href="/courses.html">Courses</a><a href="/products.html">Products</a><a href="/consultation.html">Consultation</a><a href="/admin.html">Admin</a></div>
+  </div>
+  <div class="copyright"><span>© <span id="year"></span> AquaForma</span><span>Client information is stored securely for request processing.</span></div>
+</footer>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+const menuButton=document.querySelector(".mobile-menu"),navLinks=document.querySelector(".navlinks");
+if(menuButton&&navLinks){menuButton.addEventListener("click",()=>{const open=navLinks.classList.toggle("mobile-open");menuButton.setAttribute("aria-expanded",String(open));});navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{navLinks.classList.remove("mobile-open");menuButton.setAttribute("aria-expanded","false");}));}
+</script>
+<script src="/consultation.js" defer></script></body></html>

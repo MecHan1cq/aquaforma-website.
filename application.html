@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#102c36">
+<title>Waterfall project application | AquaForma</title>
+<meta name="description" content="Apply for a custom AquaForma waterfall project.">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body class="subpage">
+<div class="topline"><span>AQUAFORMA · WATER ARCHITECTURE</span><span>Projects and learning across Europe</span></div>
+<header class="nav sub-nav">
+  <a class="logo" href="/">AQUAFORMA<small>WATER ARCHITECTURE</small></a>
+  <nav class="navlinks">
+    <a href="/">Home</a><a href="/portfolio.html">Portfolio</a><a href="/application.html">Waterfall project</a>
+    <a href="/courses.html">Courses</a><a href="/products.html">Products</a><a href="/consultation.html">Consultation</a>
+  </nav>
+  <div class="rightnav"><a class="cta" href="/application.html">Start a project ↗</a><button class="mobile-menu" aria-label="Menu" aria-expanded="false">☰</button></div>
+</header>
+<main class="page-main">
+
+<section class="page-hero">
+  <div class="kicker">PRIVATE OWNER & INVESTOR APPLICATION</div>
+  <h1>WATERFALL PROJECT</h1>
+  <p>Thank you for your interest in creating a unique waterfall. This short application helps us understand your project, the location and your investment plans so we can prepare a relevant first consultation.</p>
+</section>
+<section class="page-content two-col">
+  <div class="side-copy">
+    <div class="kicker">HOW IT WORKS</div>
+    <h2>Why do we ask these questions?</h2>
+    <p>Each waterfall is different. The answers help us understand who is commissioning the project, where the water feature will be installed, what type of design you have in mind, your approximate budget and your preferred start date.</p>
+    <p>After submitting the form, your request and any attached photos or videos are saved in our client system. The AquaForma team can review the information and contact you to discuss the next steps.</p>
+    <div class="info-panel"><strong>What happens next?</strong><ol><li>We review your project details.</li><li>We assess the location and initial requirements.</li><li>We contact you to clarify the concept and next steps.</li></ol></div>
+    <p class="small-note">Please do not upload confidential documents or information that is not needed to assess your project.</p>
+  </div>
+  <form class="portal-form" id="applicationForm">
+    <h2>Contact details</h2>
+    <div class="form-grid">
+      <label>First name<input name="first_name" required maxlength="100" autocomplete="given-name"></label>
+      <label>Last name<input name="last_name" required maxlength="100" autocomplete="family-name"></label>
+      <label>Email<input type="email" name="email" required maxlength="254" autocomplete="email"></label>
+      <label>Phone / WhatsApp<input name="phone" required maxlength="60" autocomplete="tel"></label>
+      <label class="span-2">Street address<input name="address" required maxlength="300" autocomplete="street-address"></label>
+      <label class="span-2">Country / City<input name="country_city" required maxlength="180" autocomplete="country-name"></label>
+    </div>
+    <div class="form-divider"></div>
+    <h2>Five main project questions</h2>
+    <label>1. Are you the property owner or direct investor?
+      <select name="investor_type" required><option value="">Select an option</option><option>Property owner</option><option>Direct investor</option></select>
+    </label>
+    <label>2. Where would you like your waterfall to be located?
+      <select name="location_type" required><option value="">Select an option</option><option>Indoor</option><option>Outdoor</option><option>Both</option></select>
+    </label>
+    <label>3. What type of waterfall are you interested in?
+      <select name="waterfall_type" required><option value="">Select an option</option><option>Mobile waterfall</option><option>Permanent waterfall</option><option>Custom-designed waterfall</option><option>Not sure yet</option></select>
+    </label>
+    <label>4. What is your planned investment budget?
+      <select name="budget" required><option value="">Select a budget range</option><option>€3,000–5,000</option><option>€5,000–15,000</option><option>€15,000–30,000</option><option>€30,000–50,000</option><option>€50,000–100,000</option><option>€100,000–250,000</option><option>€250,000+</option></select>
+    </label>
+    <label>5. When are you planning to start your project?
+      <select name="timeline" required><option value="">Select a timeframe</option><option>Immediately</option><option>Within 3–6 months</option><option>Within 6–12 months</option><option>Future project</option></select>
+    </label>
+    <label>Additional information (optional)<textarea name="additional_info" rows="5" maxlength="10000" placeholder="Tell us about your ideas, dimensions, materials, site conditions or any other relevant details."></textarea></label>
+    <label>Project photos or videos (optional)
+      <input type="file" name="files" id="applicationFiles" multiple accept="image/jpeg,image/png,image/webp,image/gif,image/heic,image/heif,video/mp4,video/quicktime,video/webm,application/pdf">
+      <small>Images, videos or PDF files. Maximum 25 MB per file and 50 MB in total.</small>
+    </label>
+    <label class="consent-row"><input type="checkbox" name="consent" required><span>I agree that AquaForma may use these details to review my project and contact me about this request.</span></label>
+    <button class="cta" type="submit">Submit project application ↗</button>
+    <p class="form-status" id="applicationStatus" role="status">All fields marked as required must be completed.</p>
+  </form>
+</section>
+
+</main>
+<footer>
+  <div class="foot">
+    <div><a class="logo" href="/">AQUAFORMA<small>WATER ARCHITECTURE</small></a><p>Bespoke water features, garden design and learning experiences.</p></div>
+    <div class="footlinks"><a href="/">Home</a><a href="/portfolio.html">Portfolio</a><a href="/application.html">Project application</a><a href="/courses.html">Courses</a><a href="/products.html">Products</a><a href="/consultation.html">Consultation</a><a href="/admin.html">Admin</a></div>
+  </div>
+  <div class="copyright"><span>© <span id="year"></span> AquaForma</span><span>Client information is stored securely for request processing.</span></div>
+</footer>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+const menuButton=document.querySelector(".mobile-menu"),navLinks=document.querySelector(".navlinks");
+if(menuButton&&navLinks){menuButton.addEventListener("click",()=>{const open=navLinks.classList.toggle("mobile-open");menuButton.setAttribute("aria-expanded",String(open));});navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{navLinks.classList.remove("mobile-open");menuButton.setAttribute("aria-expanded","false");}));}
+</script>
+<script src="/application.js" defer></script></body></html>

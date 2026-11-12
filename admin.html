@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#102c36">
+<title>AquaForma admin | AquaForma</title>
+<meta name="description" content="Private AquaForma administration dashboard.">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body class="subpage">
+<div class="topline"><span>AQUAFORMA · WATER ARCHITECTURE</span><span>Projects and learning across Europe</span></div>
+<header class="nav sub-nav">
+  <a class="logo" href="/">AQUAFORMA<small>WATER ARCHITECTURE</small></a>
+  <nav class="navlinks">
+    <a href="/">Home</a><a href="/portfolio.html">Portfolio</a><a href="/application.html">Waterfall project</a>
+    <a href="/courses.html">Courses</a><a href="/products.html">Products</a><a href="/consultation.html">Consultation</a>
+  </nav>
+  <div class="rightnav"><a class="cta" href="/application.html">Start a project ↗</a><button class="mobile-menu" aria-label="Menu" aria-expanded="false">☰</button></div>
+</header>
+<main class="page-main">
+
+<section class="page-hero admin-hero">
+  <div class="kicker">PRIVATE AREA</div><h1>ADMIN DASHBOARD</h1>
+  <p>Manage project applications, consultation requests, courses, products, invoices and payments.</p>
+</section>
+<section class="page-content admin-content">
+  <div class="admin-login" id="adminLogin">
+    <h2>Administrator sign in</h2>
+    <p>Use the admin username and password configured in the server environment.</p>
+    <form id="adminLoginForm">
+      <label>Username<input name="username" autocomplete="username" required></label>
+      <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+      <button class="cta" type="submit">Sign in ↗</button>
+      <p class="form-status" id="adminLoginStatus" role="status"></p>
+    </form>
+  </div>
+  <div id="adminDashboard" hidden>
+    <div class="admin-toolbar"><div><span class="kicker">AQUAFORMA MANAGEMENT</span><h2>Incoming requests & catalogue</h2></div><button class="secondary-button" id="adminRefresh">Refresh data</button><button class="secondary-button" id="adminLogout">Sign out</button></div>
+    <div class="admin-tabs" id="adminTabs">
+      <button class="active" data-tab="applications">Applications</button>
+      <button data-tab="consultations">Consultations</button>
+      <button data-tab="courses">Courses</button>
+      <button data-tab="products">Products</button>
+      <button data-tab="invoice_requests">Invoice requests</button>
+      <button data-tab="payments">Payments</button>
+      <button data-tab="enquiries">General enquiries</button>
+    </div>
+    <div class="admin-summary" id="adminSummary"></div>
+    <section class="admin-panel" id="adminPanel"></section>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="foot">
+    <div><a class="logo" href="/">AQUAFORMA<small>WATER ARCHITECTURE</small></a><p>Bespoke water features, garden design and learning experiences.</p></div>
+    <div class="footlinks"><a href="/">Home</a><a href="/portfolio.html">Portfolio</a><a href="/application.html">Project application</a><a href="/courses.html">Courses</a><a href="/products.html">Products</a><a href="/consultation.html">Consultation</a><a href="/admin.html">Admin</a></div>
+  </div>
+  <div class="copyright"><span>© <span id="year"></span> AquaForma</span><span>Client information is stored securely for request processing.</span></div>
+</footer>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+const menuButton=document.querySelector(".mobile-menu"),navLinks=document.querySelector(".navlinks");
+if(menuButton&&navLinks){menuButton.addEventListener("click",()=>{const open=navLinks.classList.toggle("mobile-open");menuButton.setAttribute("aria-expanded",String(open));});navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{navLinks.classList.remove("mobile-open");menuButton.setAttribute("aria-expanded","false");}));}
+</script>
+<script src="/admin.js" defer></script></body></html>

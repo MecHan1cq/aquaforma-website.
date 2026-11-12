@@ -15,6 +15,26 @@ services:
           property: connectionString
       - key: ALLOWED_ORIGINS
         value: https://aquaforma-site.onrender.com
+      - key: FRONTEND_URL
+        value: https://aquaforma-site.onrender.com
+      - key: ADMIN_USERNAME
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: STRIPE_MAX_ONLINE_AMOUNT_CENTS
+        value: "50000"
+      - key: GROUP_COURSE_PRICE_EUR
+        value: "2500"
+      - key: PRIVATE_COURSE_PRICE_EUR
+        value: "5000"
+      - key: MAX_FILE_BYTES
+        value: "26214400"
+      - key: MAX_APPLICATION_UPLOAD_BYTES
+        value: "52428800"
 
   - type: web
     name: aquaforma-site
@@ -23,7 +43,7 @@ services:
     staticPublishPath: dist
     envVars:
       - key: API_BASE_URL
-        value: https://aquaforma-api.onrender.com
+        value: https://aquaforma-api-qoaz.onrender.com
 
 databases:
   - name: aquaforma-db

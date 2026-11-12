@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#102c36">
+<title>Flowerbeds & Alpine Gardens courses | AquaForma</title>
+<meta name="description" content="Group and private AquaForma courses in flowerbeds and alpine gardens.">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body class="subpage">
+<div class="topline"><span>AQUAFORMA · WATER ARCHITECTURE</span><span>Projects and learning across Europe</span></div>
+<header class="nav sub-nav">
+  <a class="logo" href="/">AQUAFORMA<small>WATER ARCHITECTURE</small></a>
+  <nav class="navlinks">
+    <a href="/">Home</a><a href="/portfolio.html">Portfolio</a><a href="/application.html">Waterfall project</a>
+    <a href="/courses.html">Courses</a><a href="/products.html">Products</a><a href="/consultation.html">Consultation</a>
+  </nav>
+  <div class="rightnav"><a class="cta" href="/application.html">Start a project ↗</a><button class="mobile-menu" aria-label="Menu" aria-expanded="false">☰</button></div>
+</header>
+<main class="page-main">
+
+<section class="page-hero">
+  <div class="kicker">AQUAFORMA LEARNING</div>
+  <h1>FLOWERBEDS & ALPINE GARDENS</h1>
+  <p>Practical learning for people who want to design beautiful, structured and natural garden spaces. Choose a group course or request a private learning programme.</p>
+</section>
+<section class="page-content">
+  <div class="course-grid">
+    <article class="course-card"><img src="/assets/garden-pond.svg" alt="Garden landscape illustration"><div><span class="kicker">COURSE 01</span><h2>Flowerbeds</h2><p>Learn how to plan flowerbeds, combine plants, work with colour and seasonal structure, and create a coherent planting composition.</p><ul><li>Layout and proportions</li><li>Plant selection and combinations</li><li>Seasonal interest and maintenance</li></ul></div></article>
+    <article class="course-card"><img src="/assets/architecture.svg" alt="Landscape design illustration"><div><span class="kicker">COURSE 02</span><h2>Alpine Gardens</h2><p>Explore alpine garden design, natural stone, relief, drainage and plant combinations for a balanced mountain-inspired landscape.</p><ul><li>Rock garden structure</li><li>Stone, substrate and drainage</li><li>Alpine plants and care</li></ul></div></article>
+  </div>
+  <div class="pricing-grid">
+    <article class="price-card"><span class="kicker">GROUP LEARNING</span><h2>Group course</h2><p class="price">€2,500 <small>/ person</small></p><p>Learn alongside other participants in a shared programme.</p></article>
+    <article class="price-card featured"><span class="kicker">ONE-TO-ONE</span><h2>Private course</h2><p class="price">€5,000</p><p>A dedicated programme with individual attention and a schedule agreed with you.</p></article>
+  </div>
+  <div class="course-request">
+    <div><div class="kicker">REQUEST YOUR PLACE</div><h2>Tell us which course interests you</h2><p>Course enrolments are recorded in the AquaForma admin area. The team will contact you with availability and invoice details. Course fees are handled by invoice, not by the small-payment Stripe checkout.</p></div>
+    <form class="portal-form compact-form" id="courseForm">
+      <label>Course<select name="course" required><option value="flowerbeds">Flowerbeds</option><option value="alpine-gardens">Alpine Gardens</option></select></label>
+      <label>Format<select name="course_format" id="courseFormat" required><option value="group">Group — €2,500 per person</option><option value="private">Private — €5,000</option></select></label>
+      <div class="selected-price" id="selectedCoursePrice">Course fee: €2,500</div>
+      <label>Full name<input name="name" required maxlength="160"></label>
+      <label>Email<input name="email" type="email" required maxlength="254"></label>
+      <label>Phone / WhatsApp<input name="phone" maxlength="60"></label>
+      <label>Additional message<textarea name="message" rows="3" maxlength="3000"></textarea></label>
+      <button class="cta" type="submit">Request course details ↗</button>
+      <p class="form-status" id="courseStatus" role="status"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="foot">
+    <div><a class="logo" href="/">AQUAFORMA<small>WATER ARCHITECTURE</small></a><p>Bespoke water features, garden design and learning experiences.</p></div>
+    <div class="footlinks"><a href="/">Home</a><a href="/portfolio.html">Portfolio</a><a href="/application.html">Project application</a><a href="/courses.html">Courses</a><a href="/products.html">Products</a><a href="/consultation.html">Consultation</a><a href="/admin.html">Admin</a></div>
+  </div>
+  <div class="copyright"><span>© <span id="year"></span> AquaForma</span><span>Client information is stored securely for request processing.</span></div>
+</footer>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+const menuButton=document.querySelector(".mobile-menu"),navLinks=document.querySelector(".navlinks");
+if(menuButton&&navLinks){menuButton.addEventListener("click",()=>{const open=navLinks.classList.toggle("mobile-open");menuButton.setAttribute("aria-expanded",String(open));});navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{navLinks.classList.remove("mobile-open");menuButton.setAttribute("aria-expanded","false");}));}
+</script>
+<script src="/courses.js" defer></script></body></html>

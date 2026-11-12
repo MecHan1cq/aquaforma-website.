@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#102c36">
+<title>AquaForma portfolio | AquaForma</title>
+<meta name="description" content="AquaForma water architecture and garden design portfolio.">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body class="subpage">
+<div class="topline"><span>AQUAFORMA · WATER ARCHITECTURE</span><span>Projects and learning across Europe</span></div>
+<header class="nav sub-nav">
+  <a class="logo" href="/">AQUAFORMA<small>WATER ARCHITECTURE</small></a>
+  <nav class="navlinks">
+    <a href="/">Home</a><a href="/portfolio.html">Portfolio</a><a href="/application.html">Waterfall project</a>
+    <a href="/courses.html">Courses</a><a href="/products.html">Products</a><a href="/consultation.html">Consultation</a>
+  </nav>
+  <div class="rightnav"><a class="cta" href="/application.html">Start a project ↗</a><button class="mobile-menu" aria-label="Menu" aria-expanded="false">☰</button></div>
+</header>
+<main class="page-main">
+
+<section class="page-hero">
+  <div class="kicker">WATER · STONE · LANDSCAPE</div>
+  <h1>PORTFOLIO & INSPIRATION</h1>
+  <p>Explore visual directions for custom waterfalls, water features and garden environments. Each project is adapted to its architecture, site conditions and the client's vision.</p>
+</section>
+<section class="page-content">
+  <div class="portfolio-grid">
+    <figure class="portfolio-item wide"><img src="/assets/fountain-real.webp" alt="Water feature and natural stone composition"><figcaption><span>WATER ARCHITECTURE</span><strong>Natural stone and moving water</strong></figcaption></figure>
+    <figure class="portfolio-item"><img src="/assets/fountain-01.webp" alt="Garden waterfall inspiration"><figcaption><span>PRIVATE GARDENS</span><strong>Water in a green landscape</strong></figcaption></figure>
+    <figure class="portfolio-item"><img src="/assets/fountain-02.webp" alt="Multi-level waterfall inspiration"><figcaption><span>CASCADE DESIGN</span><strong>Layered water movement</strong></figcaption></figure>
+    <figure class="portfolio-item"><img src="/assets/fountain-03.webp" alt="Stone waterfall detail"><figcaption><span>NATURAL MATERIALS</span><strong>Stone, texture and sound</strong></figcaption></figure>
+    <figure class="portfolio-item wide"><img src="/assets/fountain-video-01-poster.webp" alt="Water feature video still"><figcaption><span>PROJECT DETAILS</span><strong>Movement, sound and atmosphere</strong></figcaption></figure>
+  </div>
+  <p class="notice">Portfolio note: the supplied archive contains visual reference images. Before publishing these as completed client projects, confirm their ownership and replace or caption any illustrative material accurately.</p>
+  <div class="banner portfolio-cta"><div><h2>Have a project of your own?</h2><p>Tell us about the site, your idea and your preferred timeline.</p></div><a class="cta" href="/application.html">Submit a project ↗</a></div>
+</section>
+
+</main>
+<footer>
+  <div class="foot">
+    <div><a class="logo" href="/">AQUAFORMA<small>WATER ARCHITECTURE</small></a><p>Bespoke water features, garden design and learning experiences.</p></div>
+    <div class="footlinks"><a href="/">Home</a><a href="/portfolio.html">Portfolio</a><a href="/application.html">Project application</a><a href="/courses.html">Courses</a><a href="/products.html">Products</a><a href="/consultation.html">Consultation</a><a href="/admin.html">Admin</a></div>
+  </div>
+  <div class="copyright"><span>© <span id="year"></span> AquaForma</span><span>Client information is stored securely for request processing.</span></div>
+</footer>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+const menuButton=document.querySelector(".mobile-menu"),navLinks=document.querySelector(".navlinks");
+if(menuButton&&navLinks){menuButton.addEventListener("click",()=>{const open=navLinks.classList.toggle("mobile-open");menuButton.setAttribute("aria-expanded",String(open));});navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{navLinks.classList.remove("mobile-open");menuButton.setAttribute("aria-expanded","false");}));}
+</script>
+</body></html>
